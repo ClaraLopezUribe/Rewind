@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: A Coding Project by Clara Lopez-Uribe</title>
+    <title>RETRO: A Coding Project by Clara Lopez-Uribe</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +26,7 @@
     <!--=== Nav Section ===-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" height="24" width="24"> APP NAME</a>
+            <a class="navbar-brand" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" height="24" width="24"> RETRO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,25 +55,109 @@
 
     <!--=== Main Section ===-->
     <main class="flex-shrink-0">
-    <div class="container px-4 py-5 mt-5">
-        <h1 class="border-2 border-bottom border-dark py-3">The Code for App Name</h1>
-        <div class="row row-cols-1 row-cols-lg-2 g-5 py-1">
-            <div class="col-lg-8">
-                <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World
-                    function helloWorld() {
-                        alert ("hello World");
-                    }
-                </code></pre>
+        <div class="container col-xxl-8 py-5 mt-4">
+            <div>
+                <h1 class="display-5 lh-2 fw-bold">RETRO:</h1>
+                <h2 class="display-6 lh-2 mb-4 border-1 border-bottom border-dark"> The CODE</h2>
             </div>
-            <div class="col-lg-4">
-                <p>The Code is structured in one function</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with the message "Hello World"</p>
+            <div class="row row-cols-1 row-cols-lg-2 g-5 py-1">
+                <div class="col-lg-8">
+                    <pre class="line-numbers"><code class="language-javascript">
+                        //CONTROLLER function
+    
+    function getValues() {
+        
+        //1. Get values from the page
+       
+        let startValue = document.getElementById("startValue").value;
+        let endValue = document.getElementById("endValue").value;
+       
+        //2. Validate input to ensure the use of integers, not strings:
+        
+            //Attempt to parse into integers 
+        
+        startValue = parseInt(startValue);
+        endValue = parseInt(endValue);
+    
+            //boolean test to determine next steps
+       
+        if (Number.isInteger(startValue) && (Number.isInteger)(endValue)) {
+    
+            //Call generateNumbers
+            let numbers = generateNumbers(startValue, endValue);
+    
+        //3. Call displayNumbers
+    
+            displayNumbers(numbers);
+    
+            // OR display alert
+        } else {
+            alert("Error: You must enter INTEGERS");
+        }
+    
+    }
+    
+    //LOGIC function(s)
+    function generateNumbers(sValue, eValue) {
+        
+        let numbers = [];
+        
+        //generate all the numbers from start to end
+        for (let index = sValue; index <= eValue; index ++) {
+            
+            //This will execute in a loop until index = eValue
+            numbers.push(index);
+        }
+    
+        return numbers;
+    
+    }
+    
+    //DISPLAY function(s)
+    function displayNumbers(numbers) {
+    
+        let templateRows = "";
+    
+        for (let index = 0; index < numbers.length; index++) {
+    
+            let className = "even";
+            let number = numbers[index];
+    
+            //display numbers and mark even numbers in bold
+    
+            if(number % 2 == 0) {
+               
+                className = "even";
+    
+            } else {
+    
+                className = "odd";
+    
+            }
+    
+            templateRows += `&lt;tr>&lt;td class="${className}" >${number}&lt;/td>&lt;/tr>
+            
+        }
+    
+        document.getElementById("results").innerHTML = templateRows
+    
+    }
+    
+                    </code></pre>
+                </div>
+                <div class="col-lg-4 py-2">
+                    <img src="img/Retro Logo.png" width="300" height="300">
+                    <p>The Code is structured in three functions:</p>
+                    <h5>getValues</h5>
+                    <p>This function retrieves the values entered by the user on the app page. It then validates them to ensure they are integers between 0-100. If they are not, an error message is displayed. Otherwise, the next functions are called.</p>
+                    <h5>generateNumbers</h5>
+                    <p>This function uses a "for loop" to incrementally generate and return all the numbers from the start value to the end value.</p>
+                    <h5>displayNumbers</h5>
+                    <p>In this function, an "If/Else" statement is used to identify the odd and even numbers that were generated in the previous step. The results are then inserted and displayed in a table, with even numbers in <b>BOLD</b>.</p>
+                </div>
             </div>
         </div>
-    </div>
-    </main>
+        </main>
 
     <!--=== Footer Section ===-->    
     <footer class="footer mt-auto py-3 sticky-footer">

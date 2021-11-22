@@ -1,12 +1,13 @@
 :root{
-    --primary-color: #C99383;
-    --secondary-color: #83B8C9;
-    --third-color:#b8c983;
+    --logo-primary-color: #C99383;
+    --logo-secondary-color: #83B8C9;
+    --logo-third-color:#b8c983;
     --dark-color: #233643;
     --white-color: #fefefe;
     --black-color: #000000;
-    --bright-color: rgb(248, 173, 10);
-    --brightsecond-color: rgb(54, 101, 146);
+    --bright-color: #32bdc2;
+    --brightsecond-color: rgb(27, 59, 61);
+    --site-bright-color:#32bdc2;
 }
 
 body{
