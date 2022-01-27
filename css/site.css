@@ -2,16 +2,17 @@
     --logo-primary-color: #C99383;
     --logo-secondary-color: #83B8C9;
     --logo-third-color:#b8c983;
-    --dark-color: #233643;
+
+    /*Site specific colors*/
     --white-color: #fefefe;
     --black-color: #000000;
+    --dark-color: #1b3b3d;
     --bright-color: #32bdc2;
-    --brightsecond-color: rgb(27, 59, 61);
-    --site-bright-color:#32bdc2;
-}
+    --brightsecond-color: #f80bec;
+  }
 
 body{
-    color: var(--brightsecond-color);
+    color: var(--dark-color);
     background-color: var(--white-color);
 }
 
@@ -33,12 +34,16 @@ footer .social>a{
 
 footer .social>a:hover{
     opacity: .9;
-    color: var(--secondary-color)
+    color: var(--logo-secondary-color)
 
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h6{
     color: var(--bright-color);
+}
+
+h5{
+    color: var(--brightsecond-color);
 }
 
 main>.container{
@@ -53,11 +58,16 @@ main>.container{
 }
 
 .checklist{
-    color: var(--brightsecond-color);
+    color: var(--dark-color);
 }
 
 .checklist >li i{
-    color: var(--bright-color);    
+    color: var(--brightsecond-color);    
+}
+
+.alert{
+    color: var(--dark-color);
+    background-color: var(--brightsecond-color);
 }
 
 

@@ -54,27 +54,27 @@
 
     <!--=== Main Section ===-->
     <main class="flex-shrink-0">
-        <div class="container col-xxl-8 py-5 mt-4">
+        <div class="container col-xxl-8 py-5 mt-5">
             <div class="row row-cols-1 row-cols-lg-2 g-5">
 
                 <div class="col col-lg-5 border-end border-dark border-1">
                     <h1 class="display-5 lh-2 fw-bold">RETRO:</h1>
                     <h1 class="display-6 lh-2 mb-4">A Coding Project</h1>
-                    <p class="lead">Loop through Learning!  A Javascript exercise using loops.  Write a program that displays numbers from 0-100.  Display the even numbers in <b>BOLD</b>.</p>
+                    <p class="lead">Blast to the Past!  A Javascript exercise using arrays.  Write a string in reverse.</p>
                     <h2 class="mt-5 border-bottom border-2">Instructions:</h2>
-                    <p>Enter a starting and ending value.  Click the button to run the program.</p>
+                    <p>Enter a word, phrase or sentence.  Click the button to reverse the string.</p>
                 </div>
 
                 <div class="col col-lg-7">
-                    <p class="h5">Enter a word, phrase, or sentence</p>
+                    <p class="h5">Enter your String</p>
                     <form class="row row-cols-2 gy-2 gx-3">
                         <div class="col">
-                            <input id="yourText" type="text" class="form-control" placeholder="Enter Your Text" value="" aria-label="Enter Your Text">
+                            <input id="yourText" type="text" class="form-control" placeholder="Enter Your String" value="" aria-label="Enter Your String">
                         </div>
                         
                         <div class="col-12 d-flex">
-                            <button id="btnSubmit" type="button" class="btn-dark btn-lg">Submit</button>
-                        </div>
+                            <button id="btnSubmit" type="button" class="btn-outline-dark btn-lg">Reverse Me</button>
+                        </div>                        
                     </form>
                     <h3 class="mt-5 border-bottom border-2">Results</h3> 
                     <div class="table-responsive">
@@ -83,6 +83,9 @@
                                 <!--Results Go Here-->
                             </tbody>
                         </table>
+                    </div>
+                    <div class="col-3 d-flex alert mt-5 p-0 invisible fade show" id="alert" role="alert">
+                        <h4 class="alert alert-heading">Well done!</h4>
                     </div>
                 </div>
             </div>
