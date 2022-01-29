@@ -1,79 +1,53 @@
-//CONTROLLER function
+//Controller function: Get string from page
 
-function getValues() {
-    
-    //1. Get values from the page
-   
-    let startValue = document.getElementById("startValue").value;
-    let endValue = document.getElementById("endValue").value;
-   
-    //2. Validate input to ensure the use of integers, not strings:
-    
-        //Attempt to parse into integers 
-    
-    startValue = parseInt(startValue);
-    endValue = parseInt(endValue);
+function getValue() {
 
-        //boolean test to determine next steps
-   
-    if (Number.isInteger(startValue) && (Number.isInteger)(endValue)) {
-
-        //Call generateNumbers
-        let numbers = generateNumbers(startValue, endValue);
-
-    //3. Call displayNumbers
-
-        displayNumbers(numbers);
-
-        // OR display alert
-    } else {
-        alert("Error: You must enter INTEGERS between 0-100");
-    }
-
-}
-
-//LOGIC function(s)
-function generateNumbers(sValue, eValue) {
-    
-    let numbers = [];
-    
-    //generate all the numbers from start to end
-    for (let index = sValue; index <= eValue; index ++) {
+    document.getElementById("alert").classList.add("invisible");
         
-        //This will execute in a loop until index = eValue
-        numbers.push(index);
-    }
+    let yourString = document.getElementById("yourString").value;
 
-    return numbers;
+    let revString = reverseString(yourString);
 
+    displayReversedString(revString);
 }
 
-//DISPLAY function(s)
-function displayNumbers(numbers) {
+//Logic function: Reverse string
 
-    let templateRows = "";
+function reverseString(yourString){
+//declare that the string entered by the user (yourString) is an array
 
-    for (let index = 0; index < numbers.length; index++) {
+//Why is this let revString = [] instead of let yourString = []???
+//why do we need to declare that this as an array if all strings are arrays???
+    let revString = [];
 
-        let className = "even";
-        let number = numbers[index];
+//reverse the string entered by user (yourString) using a for loop:
+    //use the length parameter to determine what the last position of yourString 
+        //last position of the array will be .length -1
+    //decrement to index=0 by using index--
+    //the reversed string (revString) is built by adding to itself the calculated index of each iteration of the for loop
 
-        //display numbers and mark even numbers in bold
-
-        if(number % 2 == 0) {
-           
-            className = "even";
-
-        } else {
-
-            className = "odd";
-
-        }
-
-        templateRows += `<tr><td class="${className}">${number}</td></tr>`;
+    for (let index = yourString.length - 1; index >= 0; index--) {
+       revString += yourString[index]; 
         
     }
 
-    document.getElementById("results").innerHTML = templateRows
+//return the value back to the controller function
+    return revString;
+    
 
 }
+
+//View function: Display results on screen
+
+function displayReversedString (revString) {
+
+    //write to the page using template literal with tick sign (prefered over concatenation)
+    document.getElementById("result").innerHTML = `Your string reversed is: ${revString}`
+    //show the alert box
+    document.getElementById("alert").classList.remove("invisible");
+
+
+}
+
+//Display alert message
+
