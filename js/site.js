@@ -17,7 +17,7 @@ function reverseString(yourString){
 //declare that the string entered by the user (yourString) is an array
 
 //Why is this let revString = [] instead of let yourString = []???
-//why do we need to declare that this as an array if all strings are arrays???
+
     let revString = [];
 
 //reverse the string entered by user (yourString) using a for loop:

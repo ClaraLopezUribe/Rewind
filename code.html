@@ -63,93 +63,68 @@
             <div class="row row-cols-1 row-cols-lg-2 g-5 py-1">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //CONTROLLER function
-    
-    function getValues() {
+                        //Controller function: Get string from page
+
+function getValue() {
+
+    document.getElementById("alert").classList.add("invisible");
         
-        //1. Get values from the page
-       
-        let startValue = document.getElementById("startValue").value;
-        let endValue = document.getElementById("endValue").value;
-       
-        //2. Validate input to ensure the use of integers, not strings:
+    let yourString = document.getElementById("yourString").value;
+
+    let revString = reverseString(yourString);
+
+    displayReversedString(revString);
+}
+
+//Logic function: Reverse string
+
+function reverseString(yourString){
+//declare that the string entered by the user (yourString) is an array
+
+//Why is this let revString = [] instead of let yourString = []???
+//why do we need to declare that this as an array if all strings are arrays???
+    let revString = [];
+
+//reverse the string entered by user (yourString) using a for loop:
+    //use the length parameter to determine what the last position of yourString 
+        //last position of the array will be .length -1
+    //decrement to index=0 by using index--
+    //the reversed string (revString) is built by adding to itself the calculated index of each iteration of the for loop
+
+    for (let index = yourString.length - 1; index >= 0; index--) {
+       revString += yourString[index]; 
         
-            //Attempt to parse into integers 
-        
-        startValue = parseInt(startValue);
-        endValue = parseInt(endValue);
-    
-            //boolean test to determine next steps
-       
-        if (Number.isInteger(startValue) && (Number.isInteger)(endValue)) {
-    
-            //Call generateNumbers
-            let numbers = generateNumbers(startValue, endValue);
-    
-        //3. Call displayNumbers
-    
-            displayNumbers(numbers);
-    
-            // OR display alert
-        } else {
-            alert("Error: You must enter INTEGERS");
-        }
-    
     }
+
+//return the value back to the controller function
+    return revString;
     
-    //LOGIC function(s)
-    function generateNumbers(sValue, eValue) {
-        
-        let numbers = [];
-        
-        //generate all the numbers from start to end
-        for (let index = sValue; index <= eValue; index ++) {
-            
-            //This will execute in a loop until index = eValue
-            numbers.push(index);
-        }
-    
-        return numbers;
-    
-    }
-    
-    //DISPLAY function(s)
-    function displayNumbers(numbers) {
-    
-        let templateRows = "";
-    
-        for (let index = 0; index < numbers.length; index++) {
-    
-            let className = "even";
-            let number = numbers[index];
-    
-            //display numbers and mark even numbers in bold
-    
-            if(number % 2 == 0) {
-               
-                className = "even";
-    
-            } else {
-    
-                className = "odd";
-    
-            }
-    
-            templateRows += `&lt;tr>&lt;td class="${className}" >${number}&lt;/td>&lt;/tr>
-            
-        }
-    
-        document.getElementById("results").innerHTML = templateRows
-    
-    }
+
+}
+
+//View function: Display results on screen
+
+function displayReversedString (revString) {
+
+    //write to the page using template literal with tick sign (prefered over concatenation)
+    document.getElementById("result").innerHTML = `Your string reversed is: ${revString}`
+    //show the alert box
+    document.getElementById("alert").classList.remove("invisible");
+
+
+}
+
+//Display alert message
+
+
     
                     </code></pre>
                 </div>
                 <div class="col-lg-4 py-2">
                     <img src="img/Blast to Past Retro Logo.png" width="300" height="300">
-                    <p class="mt-4">The Code is structured in three functions:</p>
-                    <h5>getValues</h5>
-                    <p>This function retrieves the values entered by the user on the app page. It then validates them to ensure they are integers between 0-100. If they are not, an error message is displayed. Otherwise, the next functions are called.</p>
+                    <p class="mt-4">The Code is structured in...functions:</p>
+                    <h5>getValue</h5>
+                    <p>This function... </p>
                     <h5>generateNumbers</h5>
                     <p>This function uses a "for loop" to incrementally generate and return all the numbers from the start value to the end value.</p>
                     <h5>displayNumbers</h5>
