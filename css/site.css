@@ -4,16 +4,18 @@
     --logo-third-color:#b8c983;
 
     /*Site specific colors*/
-    --white-color: #fefefe;
+    --light: #fefefe;
+    --dark: #232C33;
     --black-color: #000000;
-    --dark-color: #1b3b3d;
-    --bright-color: #32bdc2;
-    --brightsecond-color: #f80bec;
+    --lightmode-primary: #D20A96;
+    --lightmode-accent: #128082;
+    --darkmode-primary: #32BDC2;
+    --darkmode-accent: #f80bec;
   }
 
 body{
-    color: var(--dark-color);
-    background-color: var(--white-color);
+    color: var(--dark);
+    background-color: var(--light);
 }
 
 nav{
@@ -28,7 +30,7 @@ footer{
 }
 
 footer .social>a{
-    color: var(--white-color);
+    color: var(--light);
     opacity: .75;
 }
 
@@ -38,12 +40,12 @@ footer .social>a:hover{
 
 }
 
-h1, h2, h3, h4, h6{
-    color: var(--bright-color);
+h1, h2, h3, h4, h5, h6{
+    color: var(--lightmode-primary);
 }
 
-h5{
-    color: var(--brightsecond-color);
+.subheading{
+    color: var(--lightmode-accent);
 }
 
 main>.container{
@@ -58,16 +60,16 @@ main>.container{
 }
 
 .checklist{
-    color: var(--dark-color);
+    color: var(--lightmode-primary);
 }
 
 .checklist >li i{
-    color: var(--brightsecond-color);    
+    color: var(--lightmode-accent);    
 }
 
 .alert{
-    color: var(--dark-color);
-    background-color: var(--brightsecond-color);
+    color: var(--light);
+    background-color: var(--dark);
 }
 
 
@@ -79,17 +81,17 @@ word-wrap: break-word;
 }
 
 .bsicon{
-    color:purple;
+    color:#7c09f8;
 }
 
 .jsicon{
-    color:yellow;
+    color: #e2d304;
 }
 
 .html5icon{
-    color:orangered;
+    color:#fe4e1d;
 }
 
 .css3icon{
-    color:rgb(11, 82, 214)
+    color:#0b52d6;
 }
